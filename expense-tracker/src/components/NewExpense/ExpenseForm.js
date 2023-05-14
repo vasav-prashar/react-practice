@@ -37,7 +37,7 @@ function ExpenseForm(props) {
     event.preventDefault(); // to make page not reload
     const expenseData = {
       title: title,
-      amount: amount,
+      amount: +amount,
       date: new Date(date),
     };
     props.onSaveExpenseData(expenseData);
@@ -76,6 +76,7 @@ function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={props.onCancel}>Cancel</button>
         <button type="submit">Add</button>
       </div>
     </form>
